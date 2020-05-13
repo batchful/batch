@@ -10,3 +10,5 @@ The code has a few options for organization:
 
 ## COMING SOON:
 Sort files by spasific syntax: Gets a syntax and moves all the files with the syntax in the name to a folder.
+
+Sub-folders organizetion.
