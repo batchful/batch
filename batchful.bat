@@ -1,22 +1,31 @@
-title THE (ULTIMATE) ORGANIZER
+title batchful
 color 0a
 @echo off
 
 :Ask
-echo This programs orgenizes folders, place this file in the folder you want to orgenize and run it.
-echo Witch way you want to orgenize this folder?
+echo   _             _         _       __         _ 
+echo  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
+echo  | '_ \  / _` || __|/ __|| '_ \ | |_ | | | || |
+echo  | |_) || (_| || |_| (__ | | | ||  _|| |_| || |
+echo  |_.__/  \__,_| \__|\___||_| |_||_|   \__,_||_|
+echo
+echo
+echo This program organizes folders. place this file in the directory you wish to organize and run it.
+echo Choose a method of organization:
 
 echo 1. By file extensions.
 echo 2. By file names.
-echo 3. Coming soon.
-echo 4. Exit program.
+echo 
+echo
+echo Press g for the GitHub repository page and q to exit the program.
 
 set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
-if %answer% == 3 goto BySyn 
-if %answer% == 4 goto exit /b
+if %answer% == g goto exit /b
+if %answer% == q goto exit /b
+rem if %answer% == 3 goto BySyn 
 
 goto Ask
 
@@ -42,10 +51,14 @@ for %%i in (*) do (
     )
 )
 
-goto CommitExit
+:GitHub
+echo Made by 3174N with help from SFR-git
+echo
+echo GitHub repo link: https://github.com/3174N/batchful/
+goto Ask
 
-:BySyn
-echo Function not avilable yet
+rem :BySyn
+rem echo Function not avilable yet
 
 goto CommitExit
 
