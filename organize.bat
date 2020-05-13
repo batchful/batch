@@ -2,6 +2,7 @@ title THE (ULTIMATE) ORGANIZER
 color 0a
 @echo off
 
+:Ask
 echo This programs orgenizes folders, place this file in the folder you want to orgenize and run it.
 echo Witch way you want to orgenize this folder?
 
@@ -14,9 +15,10 @@ set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
-if %answer% == 3 goto BySyn else goto CommitExit
+if %answer% == 3 goto BySyn 
+if %answer% == 4 goto exit /b
 
-exit /b
+goto Ask
 
 :ByExt
 rem For each file in your folder
