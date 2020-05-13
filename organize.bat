@@ -7,13 +7,14 @@ echo Witch way you want to orgenize this folder?
 
 echo 1. By file extensions.
 echo 2. By file names.
-echo 3. Exit program.
+echo 3. Coming soon.
+echo 4. Exit program.
 
 set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
-if %answer% == 3 goto CommitExit
+if %answer% == 3 goto BySyn else goto ComitExit
 
 exit /b
 
