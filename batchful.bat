@@ -23,8 +23,8 @@ set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
-if %answer% == g goto exit /b
-if %answer% == q goto exit /b
+if %answer% == g goto OpenGit
+if %answer% == q exit /b
 rem if %answer% == 3 goto BySyn 
 
 goto Ask
@@ -59,6 +59,11 @@ goto Ask
 
 rem :BySyn
 rem echo Function not avilable yet
+
+goto CommitExit
+
+:OpenGit
+start https://github.com/3174N/batchful.git
 
 goto CommitExit
 
