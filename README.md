@@ -1,4 +1,4 @@
-# BatchOrganizer
+# batchOrganizer
 A simple folder orgenizer using batch
 
 ## HOW TO USE?
