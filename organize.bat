@@ -14,7 +14,7 @@ set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
-if %answer% == 3 goto BySyn else goto ComitExit
+if %answer% == 3 goto BySyn else goto CommitExit
 
 exit /b
 
@@ -42,5 +42,10 @@ for %%i in (*) do (
 
 goto CommitExit
 
+:BySyn
+echo Function not avilable yet
+
+goto CommitExit
+
 :CommitExit
-pause
+pause >nul| set /p Press any key to exit ...
