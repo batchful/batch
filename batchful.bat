@@ -23,7 +23,7 @@ set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
-if %answer% == g goto OpenGit
+if %answer% == g goto GitHub
 if %answer% == q exit /b
 rem if %answer% == 3 goto BySyn 
 
@@ -55,7 +55,9 @@ for %%i in (*) do (
 echo Made by 3174N with help from SFR-git
 echo
 echo GitHub repo link: https://github.com/3174N/batchful/
-goto Ask
+echo Open GitHub? [Y/N]
+set /p open = ""
+if %open% == Y OpenGit else goto Ask
 
 rem :BySyn
 rem echo Function not avilable yet
