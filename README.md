@@ -1,14 +1,18 @@
-# batchOrganizer
-A simple folder orgenizer using batch
+# batchful
+A simple and easy-to use GUI batch directory organizer. 
 
-## HOW TO USE?
-Drag and drop / copy and paste the file to the desired folder and run the file.
+No installation needed -- just run the `.bat` file in the desired folder.
 
-The code has a few options for organization:
-1. By file extension: Makes a folder for every file type and moves all the correct files in it.
-2. By file name: Takes every file with the same name and moves them to a folder.
+## Usage
+Paste the program in the directory you wish to organize and run it.
 
-## COMING SOON:
-Sort files by spasific syntax: Gets a syntax and moves all the files with the syntax in the name to a folder.
+### Configuration
+There are currently two implemented methods of organization *(more coming soon -- see below)*: 
+1. By file extension: creates a directory for every filetype and sorts the files accordingly. 
+2. By file name: creates a folder for every single file name and sorts the files into them.
 
-Sub-folders organizetion.
+## Coming Soon
+- The option to sort files by regex: finds a specific phrase anywhere in the file name
+- A GUI version of the program is in early development, but is low on our list
+- The ability to search sub-folders for items and rename files if names clash
+- Making the file extension option only create folders for used files
