@@ -1,5 +1,5 @@
 # batchful
-A simple and easy-to use GUI batch directory organizer. 
+A simple and easy-to use batch directory organizer. 
 
 No installation needed -- just run the `.bat` file in the desired folder.
 
