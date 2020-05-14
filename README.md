@@ -12,7 +12,8 @@ There are currently two implemented methods of organization *(more coming soon -
 2. By file name: creates a folder for every single file name and sorts the files into them.
 
 ## Coming Soon
-- The option to sort files by regex: finds a specific phrase anywhere in the file name
+- The option to sort files by regex: finds a specific phrase anywhere in the file name 
 - A GUI version of the program is in early development, but is low on our list
 - The ability to search sub-folders for items and rename files if names clash
 - Making the file extension option only create folders for used files
+- A bash command-line program is in development
