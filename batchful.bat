@@ -54,10 +54,20 @@ for %%i in (*) do (
 :GitHub
 echo Made by 3174N with help from SFR-git
 echo
-echo GitHub repo link: https://github.com/3174N/batchful/
-echo Open GitHub? [Y/N]
+goto GitHubAsk
+
+:GitHubAsk
+echo Open GitHub? [Y/n]
 set /p open = ""
-if %open% == Y OpenGit else goto Ask
+if /I %open% == Y OpenGit
+if /I %open% == yes OpenGit
+if /I %open% == N CommitExit
+if /I %open% == no CommitExit
+else goto GitHubRe
+
+:GitHubRe
+echo "Couldn't understand the response. Possible answers: [Y/n/yes/no]"
+goto GitHubAsk
 
 rem :BySyn
 rem echo Function not avilable yet
