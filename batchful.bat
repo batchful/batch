@@ -2,6 +2,9 @@ title batchful
 color 0a
 @echo off
 
+goto Logo
+goto Ask
+
 :Logo
 :::   _             _         _       __         _ 
 :::  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
@@ -12,8 +15,6 @@ color 0a
 :::
 
 for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
-
-goto Ask
 
 :Ask
 echo This program organizes folders. place this file in the directory you wish to organize and run it.
@@ -58,7 +59,9 @@ for %%i in (*) do (
 )
 
 :GitHub
-echo Made by 3174N with help from SFR-git
+goto Logo
+
+echo Made by 3174N and SFR-git
 echo.
 goto GitHubAsk
 
