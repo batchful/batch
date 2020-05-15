@@ -68,10 +68,10 @@ goto GitHubAsk
 :GitHubAsk
 echo Open GitHub? [Y/N]
 set /p open = ""
-if /I %open% == Y OpenGit
-if /I %open% == yes OpenGit
-if /I %open% == N CommitExit
-if /I %open% == no CommitExit
+if /I %open% == Y goto OpenGit
+if /I %open% == yes goto OpenGit
+if /I %open% == N goto Ask
+if /I %open% == no goto Ask
 else goto GitHubRe
 
 :GitHubRe
