@@ -2,21 +2,24 @@ title batchful
 color 0a
 @echo off
 
+REM echo   _             _         _       __         _ 
+REM echo  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
+REM echo  | '_ \  / _` || __|/ __|| '_ \ | |_ | | | || |
+REM echo  | |_) || (_| || |_| (__ | | | ||  _|| |_| || |
+REM echo  |_.__/  \__,_| \__|\___||_| |_||_|   \__,_||_|
+REM echo
+REM echo
+pause
+goto Ask
+
 :Ask
-echo   _             _         _       __         _ 
-echo  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
-echo  | '_ \  / _` || __|/ __|| '_ \ | |_ | | | || |
-echo  | |_) || (_| || |_| (__ | | | ||  _|| |_| || |
-echo  |_.__/  \__,_| \__|\___||_| |_||_|   \__,_||_|
-echo
-echo
 echo This program organizes folders. place this file in the directory you wish to organize and run it.
 echo Choose a method of organization:
 
 echo 1. By file extensions.
 echo 2. By file names.
 echo 
-echo
+
 echo Press g for the GitHub repository page and q to exit the program.
 
 set /p answer=""
@@ -57,7 +60,7 @@ echo
 goto GitHubAsk
 
 :GitHubAsk
-echo Open GitHub? [Y/n]
+echo Open GitHub? [Y/N]
 set /p open = ""
 if /I %open% == Y OpenGit
 if /I %open% == yes OpenGit
