@@ -21,7 +21,7 @@ echo Choose a method of organization:
 
 echo 1. By file extensions.
 echo 2. By file names.
-echo 
+echo.
 
 echo Press g for the GitHub repository page and q to exit the program.
 
@@ -59,7 +59,7 @@ for %%i in (*) do (
 
 :GitHub
 echo Made by 3174N with help from SFR-git
-echo
+echo.
 goto GitHubAsk
 
 :GitHubAsk
