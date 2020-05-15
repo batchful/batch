@@ -59,7 +59,7 @@ for %%i in (*) do (
 )
 
 :GitHub
-goto Logo
+rem goto Logo
 
 echo Made by 3174N and SFR-git
 echo.
@@ -81,7 +81,7 @@ goto GitHubAsk
 rem :BySyn
 rem echo Function not avilable yet
 
-goto CommitExit
+rem goto CommitExit
 
 :OpenGit
 start https://github.com/3174N/batchful.git
