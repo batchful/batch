@@ -52,7 +52,7 @@ goto CommitExit
 
 :ByName
 for %%i in (*) do (
-    if not "%%~ni" == "organize" (
+    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
         if not exist "%%~ni" md "%%~ni" 
         move "%%~i" "%%~ni"
     )
