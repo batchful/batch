@@ -1,5 +1,3 @@
-#### batch / [bash](https://github.com/3174N/batchful/tree/bash/)
-
 # batchful
 A simple and easy-to use batch directory organizer. 
 
