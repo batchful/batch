@@ -1,3 +1,4 @@
+*Maintained by [@3174N](https://github.com/3174N)*
 # batchful
 A simple and easy-to use batch directory organizer. 
 
