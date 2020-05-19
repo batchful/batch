@@ -1,9 +1,5 @@
-title batchful
 color 0a
 @echo off
-
-goto Logo
-goto Ask
 
 :Logo
 :::   _             _         _       __         _ 
