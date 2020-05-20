@@ -40,28 +40,12 @@ goto Ask
 echo search sub folders? [Y/N]
 set /p subF=""
 
-if %subF% == Y
-if %subF% == N
-pause
+if %subF% == Y goto SubFolder
+if %subF% == N goto NoSubFolder
 
-if %subF% == Y (
-    echo Y
-    pause
-    for /r %cd% %%g in (.) do(
-        for %%a in (".\*") do (
-        rem check if the file has an extension and if it is not our script
-        if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
-            rem check if extension forlder exists, if not it is created
-            if not exist "%%~xa" mkdir "%%~xa"
-            rem Copy (or change to move) the file to directory
-            move "%%a" "%%~dpa%%~xa\"
-        )
-    )
-    )
-)
+:SubFolder
+for /r %cd% %%i in (*.*) do move "%%i" "%cd%" 
 
-if %subF% == N(
-rem For each file in your folder
 for %%a in (".\*") do (
     rem check if the file has an extension and if it is not our script
     if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
@@ -71,6 +55,19 @@ for %%a in (".\*") do (
         move "%%a" "%%~dpa%%~xa\"
     )
 )
+
+goto CommitExit
+
+:NoSubFolder
+rem For each file in your folder
+for %%a in (".\*") do (
+    rem check if the file has an extension and if it is not our script
+    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
+        rem check if extension forlder exists, if not it is created
+        if not exist "%%~xa" mkdir "%%~xa"
+        rem Copy (or change to move) the file to directory
+        move "%%a" "%%~dpa%%~xa\"
+    )
 )
 
 goto CommitExit
