@@ -37,6 +37,30 @@ rem if %answer% == 3 goto BySyn
 goto Ask
 
 :ByExt
+echo search sub folders? [Y/N]
+set /p subF=""
+
+if %subF% == Y goto SubFolder
+if %subF% == N goto NoSubFolder
+
+:SubFolder
+for /r %%g in (*.*) do move "%%g" "%cd%"
+
+for /d /r %%g in (*.*) do @RD /S /Q "%%g"
+
+for %%a in (".\*") do (
+    rem check if the file has an extension and if it is not our script
+    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
+        rem check if extension forlder exists, if not it is created
+        if not exist "%%~xa" mkdir "%%~xa"
+        rem Copy (or change to move) the file to directory
+        move "%%a" "%%~dpa%%~xa\"
+    )
+)
+
+goto CommitExit
+
+:NoSubFolder
 rem For each file in your folder
 for %%a in (".\*") do (
     rem check if the file has an extension and if it is not our script
