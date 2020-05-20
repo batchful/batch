@@ -31,6 +31,7 @@ if %answer% == Y goto SubFolder
 :AskMethod
 echo This program organizes folders. place this file in the directory you wish to organize and run it.
 echo Choose a method of organization:
+echo.
 
 echo 1. By file extensions.
 echo 2. By file names.
