@@ -18,8 +18,8 @@ echo This program organizes folders. place this file in the directory you wish t
 echo Choose a method of organization:
 echo.
 
-echo Search sub-folders? [Y/N]
-echo WARNING: IF YOU CHOOSE TO SEARCH SUB-FOLDERS, ALL OFF YOUR SUB-FOLDERS WILL GET DELETED (THEIR CONTENT WILL NOT).
+echo Search sub-folders? [Y/n]
+echo WARNING: ALL LEFTOVER EMPTY FOLDERS WILL BE DELETED.
 
 set /p answer=""
 
@@ -57,7 +57,7 @@ goto AskMethod
 for %%a in (".\*") do (
     rem check if the file has an extension and if it is not our script
     if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
-        rem check if extension forlder exists, if not it is created
+        rem check if extension folder exists, if not it is created
         if not exist "%%~xa" mkdir "%%~xa"
         rem Copy (or change to move) the file to directory
         move "%%a" "%%~dpa%%~xa\"
@@ -98,7 +98,7 @@ rem echo Function not avilable yet
 rem goto CommitExit
 
 :OpenGit
-start https://github.com/batchful/batch.git
+start https://github.com/batchful/batch
 
 goto CommitExit
 
