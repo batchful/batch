@@ -19,6 +19,7 @@ for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
 :AskSubFolders
 echo This program organizes folders. place this file in the directory you wish to organize and run it.
 echo Choose a method of organization:
+echo.
 
 echo Search sub-folders? [Y/N]
 echo WARNING: IF YOU CHOOSE TO SEARCH SUB-FOLDERS, ALL OFF YOUR SUB-FOLDERS WILL GET DELETED (THEIR CONTENT WILL NOT).
