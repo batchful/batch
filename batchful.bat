@@ -1,3 +1,24 @@
+title batchful
+color 0a
+@echo off
+
+goto Logo
+goto Ask
+
+:Logo
+:::   _             _         _       __         _ 
+:::  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
+:::  | '_ \  / _` || __|/ __|| '_ \ | |_ | | | || |
+:::  | |_) || (_| || |_| (__ | | | ||  _|| |_| || |
+:::  |_.__/  \__,_| \__|\___||_| |_||_|   \__,_||_|
+:::
+:::
+
+for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
+
+:Ask
+echo This program organizes folders. place this file in the directory you wish to organize and run it.
+echo Choose a method of organization:
 
 echo 1. By file extensions.
 echo 2. By file names.
@@ -19,11 +40,11 @@ goto Ask
 echo search sub folders? [Y/N]
 set /p subF=""
 
-if %subF% == Y echo Y
-if %subF% == N echo N
+if %subF% == Y
+if %subF% == N
 pause
 
-if %subF% == Y(
+if %subF% == Y (
     echo Y
     pause
     for /r %cd% %%g in (.) do(
