@@ -18,7 +18,7 @@ echo This program organizes folders. place this file in the directory you wish t
 echo Choose a method of organization:
 echo.
 
-echo Search sub-folders? [Y/n]
+echo Search sub-folders? [Y/N]
 echo WARNING: ALL LEFTOVER EMPTY FOLDERS WILL BE DELETED.
 
 set /p answer=""
