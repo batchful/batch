@@ -2,9 +2,6 @@ title batchful
 color 0a
 @echo off
 
-goto Logo
-goto Ask
-
 :Logo
 :::   _             _         _       __         _ 
 :::  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
@@ -86,15 +83,13 @@ goto GitHubAsk
 
 :GitHubAsk
 echo Open GitHub? [Y/N]
-set /p open = ""
-if /I %open% == Y goto OpenGit
-if /I %open% == yes goto OpenGit
-if /I %open% == N goto Ask
-if /I %open% == no goto Ask
-else goto GitHubRe
+set /p open=""
+if %open% == Y goto OpenGit
+if %open% == yes goto OpenGit
+if %open% == N goto AskMethod
+if %open% == no goto AskMethod
 
-:GitHubRe
-echo "Couldn't understand the response. Possible answers: [Y/n/yes/no]"
+echo "Couldn't understand the response. Possible answers: [Y/N/yes/no]"
 goto GitHubAsk
 
 rem :BySyn
@@ -103,7 +98,7 @@ rem echo Function not avilable yet
 rem goto CommitExit
 
 :OpenGit
-start https://github.com/3174N/batchful.git
+start https://github.com/batchful/batch.git
 
 goto CommitExit
 
