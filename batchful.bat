@@ -21,6 +21,7 @@ echo This program organizes folders. place this file in the directory you wish t
 echo Choose a method of organization:
 
 echo Search sub-folders? [Y/N]
+echo WARNING: IF YOU CHOOSE TO SEARCH SUB-FOLDERS, ALL OFF YOUR SUB-FOLDERS WILL GET DELETED (THEIR CONTENT WILL NOT).
 
 set /p answer=""
 
