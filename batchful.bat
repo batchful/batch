@@ -44,7 +44,7 @@ if %subF% == Y goto SubFolder
 if %subF% == N goto NoSubFolder
 
 :SubFolder
-for /r %cd% %%i in (*.*) do move "%%i" "%cd%" 
+for /r %%g in (*.*) do move "%%g" "%cd%"
 
 for %%a in (".\*") do (
     rem check if the file has an extension and if it is not our script
