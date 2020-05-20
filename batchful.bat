@@ -55,8 +55,16 @@ goto AskMethod
 
 :ByExt
 for %%a in (".\*") do (
-    rem check if the file has an extension and if it is not our script
-    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
+    rem check if the file path is the same as this file
+    if "%%~dpnxa" NEQ "%~dpnx0" (
+        REM Checks if file does not have a extension        
+        if "%%~xa" == "" (
+            rem check if extension folder exists, if not it is created
+            if not exist "File" mkdir "File"
+            rem Copy (or change to move) the file to directory
+            move "%%a" "File\"
+        )
+
         rem check if extension folder exists, if not it is created
         if not exist "%%~xa" mkdir "%%~xa"
         rem Copy (or change to move) the file to directory
@@ -68,7 +76,7 @@ goto CommitExit
 
 :ByName
 for %%i in (*) do (
-    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
+    if "%%~dpnxa" NEQ "%~dpnx0" (
         if not exist "%%~ni" md "%%~ni" 
         move "%%~i" "%%~ni"
     )
