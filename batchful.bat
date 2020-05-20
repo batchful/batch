@@ -46,6 +46,8 @@ if %subF% == N goto NoSubFolder
 :SubFolder
 for /r %%g in (*.*) do move "%%g" "%cd%"
 
+for /d /r %%g in (*.*) do @RD /S /Q "%%g"
+
 for %%a in (".\*") do (
     rem check if the file has an extension and if it is not our script
     if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
