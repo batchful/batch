@@ -52,13 +52,14 @@ echo 1. By file extensions.
 echo 2. By file names.
 echo.
 
-echo Press g for the GitHub repository page and q to exit the program.
+echo Press g for the GitHub repository page, h for help and q to exit the program.
 
 set /p answer=""
 
 if %answer% == 1 goto ByExt 
 if %answer% == 2 goto ByName
 if %answer% == g goto GitHub
+if %answer% == h goto Help
 if %answer% == q exit /b
 rem if %answer% == 3 goto BySyn 
 
@@ -138,6 +139,11 @@ rem goto CommitExit
 start https://github.com/batchful/batch
 
 goto CommitExit
+
+:Help
+type README.md
+
+goto AskMethod
 
 :CommitExit
 Set /p P= Press the enter key to exit ...
