@@ -10,7 +10,7 @@ Paste the program in the directory you wish to organize and run it.
 ### Configuration
 There are currently two implemented methods of organization *(more coming soon -- see below)*: 
 1. By file extension: creates a directory for every filetype and sorts the files accordingly. 
-2. By file name: creates a directory for a spacefic phrase and sort all of the files containing the phrase.
+2. By file name: creates a directory for a spacefic phrase and moves all of the files containing the phrase to the directory.
 
 You will also be presented with the option to sort through subfolders.
 This process deletes the unnecessary folders after it's done sorting.
