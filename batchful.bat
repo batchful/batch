@@ -75,12 +75,17 @@ for %%a in (".\*") do (
 goto CommitExit
 
 :ByName
-for %%i in (*) do (
-    if "%%~dpnxa" NEQ "%~dpnx0" (
-        if not exist "%%~ni" md "%%~ni" 
-        move "%%~i" "%%~ni"
+echo Enter a phrase
+set /p name=""
+
+for %%i in (*%name%*.*) do (
+    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
+        if not exist "%name%" md "%name%" 
+        move "%%i" "%name%\"
     )
 )
+
+goto CommitExit
 
 :GitHub
 rem goto Logo
