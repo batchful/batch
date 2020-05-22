@@ -15,21 +15,21 @@ REM BFCPEVERDESC=Product Description
 REM BFCPEVERCOMPANY=Your Company
 REM BFCPEVERCOPYRIGHT=Copyright Info
 REM BFCPEOPTIONEND
-@ECHO ON
+
 title batchful
 color 0a
-@echo off
 
 :Logo
-:::   _             _         _       __         _ 
-:::  | |__    __ _ | |_  ___ | |__   / _| _   _ | |
-:::  | '_ \  / _` || __|/ __|| '_ \ | |_ | | | || |
-:::  | |_) || (_| || |_| (__ | | | ||  _|| |_| || |
-:::  |_.__/  \__,_| \__|\___||_| |_||_|   \__,_||_|
-:::
-:::
+echo SEARCHING FILE ...
+echo.
 
-for /f "delims=: tokens=*" %%A in ('findstr /b ::: "%~f0"') do @echo(%%A
+for /r C:\ %%g in (*batchful-LOGO.txt) do (
+    type "%%g"
+    echo.
+
+    goto AskSubFolders
+)
+echo File missing
 
 :AskSubFolders
 echo This program organizes folders. place this file in the directory you wish to organize and run it.
@@ -141,7 +141,16 @@ start https://github.com/batchful/batch
 goto CommitExit
 
 :Help
-type README.md
+echo SEARCHING FILE ...
+echo.
+
+for /r C:\ %%g in (*batchful-README.txt) do (
+    type "%%g"
+    echo.
+
+    goto AskMethod  
+)
+echo File missing
 
 goto AskMethod
 
