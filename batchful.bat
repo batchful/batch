@@ -44,7 +44,7 @@ if %answer% == g goto GitHub
 if %answer% == q exit /b
 rem if %answer% == 3 goto BySyn 
 
-goto Ask
+goto AskMethod
 
 :SubFolder
 for /r %%g in (*.*) do move "%%g" "%cd%"
@@ -84,6 +84,12 @@ for %%i in (*%name%*.*) do (
         move "%%i" "%name%\"
     )
 )
+
+echo Run again? [Y/N]
+set /p answer=""
+
+if %answer% == Y goto ByName
+if %answer% == N goto CommitExit
 
 goto CommitExit
 
