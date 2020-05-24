@@ -41,7 +41,7 @@ echo WARNING: ALL LEFTOVER EMPTY FOLDERS WILL BE DELETED.
 
 set /p answer=""
 
-if %answer% == Y goto SubFolder
+if %answer% == Y goto SubFolder else goto AskMethod
 
 :AskMethod
 echo This program organizes folders. place this file in the directory you wish to organize and run it.
@@ -74,8 +74,8 @@ goto AskMethod
 
 :ByExt
 for %%a in (".\*") do (
-    rem check if the file path is the same as this file
-    if "%%~dpnxa" NEQ "%~dpnx0" (
+    rem check if the file path is not the same as this file
+    if "%%~dpnxa" NEQ "%~dpnx0" if "%%~nxa" NEQ "batchfulTesting.bat" (
         REM Checks if file does not have a extension        
         if "%%~xa" == "" (
             rem check if extension folder exists, if not it is created
@@ -98,7 +98,7 @@ echo Enter a phrase
 set /p name=""
 
 for %%i in (*%name%*.*) do (
-    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" (
+    if "%%~xa" NEQ ""  if "%%~dpnxa" NEQ "%~dpnx0" if "%%~nxa" NEQ "batchfulTesting.bat" (
         if not exist "%name%" md "%name%" 
         move "%%i" "%name%\"
     )
