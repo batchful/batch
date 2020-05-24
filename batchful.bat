@@ -23,7 +23,7 @@ color 0a
 echo SEARCHING FILE ...
 echo.
 
-for /r %%~d0 %%g in (*batchful-LOGO.txt) do (
+for /r "%%~d0" %%g in (*batchful-LOGO.txt) do (
     type "%%g"
     echo.
 
@@ -144,7 +144,7 @@ goto CommitExit
 echo SEARCHING FILE ...
 echo.
 
-for /r %%~d0 %%g in (*batchful-README.txt) do (
+for /r "%%~d0" %%g in (*batchful-README.txt) do (
     type "%%g"
     echo.
 
